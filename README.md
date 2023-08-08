@@ -9,13 +9,13 @@ For more information refer to our [article](https://sol.sbc.org.br/index.php/sbc
 
 ## Content
 
-```bash
-| |- dataset
-|    |- aneurysm
-|    |- normal
-|    |- stenosis
-| |- VesselSimulator.py
-| |- vs_example.py
+```
+├ dataset
+  ├ aneurysm
+  ├ normal
+  ├ stenosis
+├ VesselSimulator.py
+├ vs_example.py
 ```
 
 ### dataset
