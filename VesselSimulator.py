@@ -198,10 +198,10 @@ def make_bezier(xys):
     result : list
         The points of the bezier vessel.
     '''
+    
     # xys should be a sequence of 2-tuples (Bezier control points)
     n = len(xys)
     combinations = __pascal_row(n - 1)
-    # 100.0                101
     ts = [t / 300.0 for t in range(301)]
 
     # This uses the generalized formula for bezier curves
@@ -223,13 +223,11 @@ def __pascal_row(n):
     result = [1]
     x, numerator = 1, n
     for denominator in range(1, n // 2 + 1):
-        # print(numerator,denominator,x)
         x *= numerator
         x /= denominator
         result.append(x)
         numerator -= 1
     if n & 1 == 0:
-        # n is even
         result.extend(reversed(result[:-1]))
     else:
         result.extend(reversed(result))
@@ -268,11 +266,11 @@ def make_end_vessel(xys, A, alpha=-2, f=3):
         width = abs(p_b[1] - p_a[1])
 
     x = np.linspace(0, 1, width, endpoint=False)
-    y = np.linspace(0, 1, width, endpoint=False)  # apenas para criar a variavel
+    y = np.linspace(0, 1, width, endpoint=False)
 
-    Fs = width  # taxa de amostragem
-    Ts = 1.0 / Fs  # periodo de amostragem
-    t = np.arange(0, 1, Ts)  # vetor de tempo
+    Fs = width
+    Ts = 1.0 / Fs
+    t = np.arange(0, 1, Ts)
 
     if f == -1:
         f = random.randint(2, 4)
@@ -497,7 +495,6 @@ def make_thinning(points, factor, alpha = 1, left_to_right = True):
 
 def __map_values(x, in_min, in_max, out_min, out_max):
     # Linear conversion
-    # https://stackoverflow.com/questions/929103/convert-a-number-range-to-another-range-maintaining-ratio
     return ((x - in_min) * (out_max - out_min) / (in_max - in_min)) + out_min
 
 
@@ -524,6 +521,7 @@ def mask_fundus_border(img, width, height, blur_radius=0, offset=0):
         DESCRIPTION.
 
     '''
+    
     background = Image.new('L', (width, height), 0)
 
     mask = Image.new("L", (width, height), 0)
@@ -557,6 +555,7 @@ def mask_fundus_details(im, width, height, point, color, alpha, blur_radius):
         DESCRIPTION.
 
     '''
+    
     w, h = width, height
     a, b = point[0], point[1]
 
