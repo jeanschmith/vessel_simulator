@@ -95,9 +95,10 @@ Consider that ```stenosis_grade``` and ```thinning_factor``` go up until 1.0
 point_a = (x_a, y_a)
 point_b = (x_b, y_b)
 point_c = (x_c, y_c)
+...
 ```
 
-6. Assemble the vessel image as you'd like (the following example has two connected vessels, but you can define how many you'd like to call):
+6. Assemble the vessel image (the following example has two connected vessels, but you can define as many as you'd like):
 ```bash
 C1 = vs.make_sine([point_a, point_b], amplitude, frequency) # calculates all the points for the vessel beginning on point_a and ending on point_b based on the type of curve
 C1 = vs.make_normal(C1, vessel_line_width) # applies a width to the vessel
