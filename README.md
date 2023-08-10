@@ -1,6 +1,17 @@
 # vessel_simulator
 A toolbox for vessel X-ray angiography images simulation.
 
+```
+@inproceedings{maccagnan2023toolbox,
+  title={Toolbox for vessel X-ray angiography images simulation},
+  author={Maccagnan, Gabriela Copetti and Schmith, Jean and Santos, Marcia and de Figueiredo, Rodrigo Marques},
+  booktitle={Anais do XXIII Simp{\'o}sio Brasileiro de Computa{\c{c}}{\~a}o Aplicada {\`a} Sa{\'u}de},
+  pages={59--70},
+  year={2023},
+  organization={SBC}
+}
+```
+
 For more information refer to our [article](https://sol.sbc.org.br/index.php/sbcas/article/view/25277/25098).
 
 ## Requirements
